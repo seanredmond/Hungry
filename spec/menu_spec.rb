@@ -3,7 +3,8 @@ require "spec_helper"
 describe Hungry::Menu do
   describe "Basic initialization" do
     before :each do
-      @menu = Hungry::Menu.new(MENU_31729, double(Hungry::Client))
+      @client_double = double(Hungry::Client)
+      @menu = Hungry::Menu.new(MENU_31729, @client_double)
     end
 
     it "has an id" do
@@ -125,5 +126,10 @@ describe Hungry::Menu do
     it "has links" do
       @menu.links.should be_an_instance_of Array
     end
+
+    it "returns its client" do
+      @menu.client.should eq @client_double
+    end
+
   end
 end

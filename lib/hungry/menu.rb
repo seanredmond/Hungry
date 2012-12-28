@@ -8,7 +8,11 @@ module Hungry
     def id
       @data['id']
     end
-    
+
+    def client
+      @client
+    end
+
     def method_missing name, *args
       name = name.to_s
       if args.empty? && @data.keys.include?(name)
