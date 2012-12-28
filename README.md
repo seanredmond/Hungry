@@ -1,5 +1,7 @@
 # Hungry
 
+[![Build Status](https://travis-ci.org/seanredmond/Hungry.png?branch=master)](https://travis-ci.org/seanredmond/Hungry)
+
 Ruby client for [NYPL Menus API](https://github.com/NYPL/menus-api) 
 
 ## Installation
