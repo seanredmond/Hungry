@@ -19,20 +19,13 @@ describe Hungry::Client do
 
   describe "#menu" do
     before :each do
-      # @f = double("Hungry::Client")
-      # @f.stub!(:get).and_return(JSON.generate({"x" => "y"}))
-      # @client = double("Hungry::Client")
-      # @client.stub!(:get_endpoint).and_return(JSON.generate({"x" => "y"}))
-      Hungry::Client.any_instance.stub(:menu).and_return('abc')
-
+      Hungry::Client.any_instance.stub(:get_endpoint).and_return({"x" => "y"})
       @client = Hungry::Client.new('fakeapikey')
     end
 
     it "returns a Hash" do
       menu = @client.menu(1000)
       menu.should be_an_instance_of Hash
-      puts menu.inspect
-      menu['x'].should eq 'asd'
     end
   end
 
