@@ -25,7 +25,7 @@ describe Hungry::Client do
 
     it "returns a Hash" do
       menu = @client.menu(1000)
-      menu.should be_an_instance_of Hash
+      menu.should be_an_instance_of Hungry::Menu
     end
   end
 
