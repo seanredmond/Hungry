@@ -5,6 +5,10 @@ module Hungry
       @client = client
     end
 
+    def id
+      @data['id']
+    end
+    
     def method_missing name, *args
       name = name.to_s
       if args.empty? && @data.keys.include?(name)
