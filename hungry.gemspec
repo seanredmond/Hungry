@@ -7,9 +7,9 @@ Gem::Specification.new do |gem|
   gem.name          = "hungry"
   gem.version       = Hungry::VERSION
   gem.authors       = ["Sean Redmond"]
-  gem.email         = ["github-smr@sneakemail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.email         = ["sean@litot.es"]
+  gem.description   = %q{Ruby wrapper for NYPL menus API}
+  gem.summary       = %q{Ruby wrapper for NYPL menus API}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
