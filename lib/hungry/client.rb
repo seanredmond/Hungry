@@ -7,7 +7,7 @@ module Hungry
     end
 
     def menu(id)
-      Hungry::Menu.new(get_endpoint("menus/#{id}"))
+      Hungry::Menu.new(get_endpoint("menus/#{id}"), self)
     end
 
     private
