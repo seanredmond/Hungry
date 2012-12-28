@@ -1,6 +1,6 @@
 # Hungry
 
-TODO: Write a gem description
+Ruby client for [NYPL Menus API](https://github.com/NYPL/menus-api) 
 
 ## Installation
 
