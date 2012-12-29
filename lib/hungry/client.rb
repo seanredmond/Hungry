@@ -41,8 +41,9 @@ module Hungry
 
     protected
     def get_endpoint(path)
-      # full_path = "http://menus.nypl.org/api/" << path
       response = @conn.get path, {"token" => @api_key}
+      @rate_limit = response.headers["x-ratelimit-limit"].to_i
+      @limit_remaining = response.headers["x-ratelimit-remaining"].to_i
       JSON.parse(response.body)
     end
   end
