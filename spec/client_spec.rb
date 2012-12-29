@@ -15,6 +15,11 @@ describe Hungry::Client do
     it "will tell you its api key" do
       @c.api_key.should eq 'fakeapikey'
     end
+
+    it "has a rate limit data that is not set yet" do
+      @c.rate_limit.should be_nil
+      @c.limit_remaining.should be_nil
+    end
   end
 
   describe "#menu" do

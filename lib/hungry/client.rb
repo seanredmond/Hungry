@@ -2,7 +2,7 @@ module Hungry
   # Handles all communication with the API server
   class Client
 
-    attr_reader :api_key
+    attr_reader :api_key, :rate_limit, :limit_remaining
 
     # Create a hungry client
     #
@@ -11,6 +11,8 @@ module Hungry
     def initialize(api_key)
       @api_key = api_key
       @conn = Faraday.new
+      @rate_limit = nil
+      @limit_remaining = nil
     end
 
     # Get a menu
