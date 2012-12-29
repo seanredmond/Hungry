@@ -10,6 +10,7 @@ module Hungry
     # @return Client A new instance of Client
     def initialize(api_key)
       @api_key = api_key
+      @conn = Faraday.new
     end
 
     # Get a menu
@@ -39,7 +40,7 @@ module Hungry
     protected
     def get_endpoint(path)
       # full_path = "http://menus.nypl.org/api/" << path
-      response = Faraday.get path, {"token" => @api_key}
+      response = @conn.get path, {"token" => @api_key}
       JSON.parse(response.body)
     end
   end
