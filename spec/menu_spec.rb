@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Hungry::Menu do
   before :each do
-    @client_double = double(Hungry::Client)
+    @client_double = double(Hungry::Client, :get_endpoint => PAGES_31279)
     @menu = Hungry::Menu.new(MENU_31729, @client_double)
   end
 
@@ -135,6 +135,14 @@ describe Hungry::Menu do
   describe "#link" do
     it "returns the link href" do
       @menu.link(:index).should eq 'http://menus.nypl.org/api/menus'
+    end
+  end
+
+  describe "#pages" do
+    it "returns its pages" do
+      p = @menu.pages
+      p.should be_an_instance_of Array
+      p.first.should be_an_instance_of Hungry::Page
     end
   end
 end
