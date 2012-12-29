@@ -21,6 +21,7 @@ module Hungry
       )
     end
 
+    protected
     def get_endpoint(path)
       # full_path = "http://menus.nypl.org/api/" << path
       response = Faraday.get path, {"token" => @api_key}
