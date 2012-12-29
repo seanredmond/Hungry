@@ -30,6 +30,12 @@ module Hungry
       )
     end
 
+    def menus
+      Hungry::MenuList.new(
+        get_endpoint("http://menus.nypl.org/api/menus/"), self
+      )
+    end
+
     protected
     def get_endpoint(path)
       # full_path = "http://menus.nypl.org/api/" << path

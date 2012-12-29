@@ -42,4 +42,17 @@ describe Hungry::Client do
     end
   end
 
+  describe "#menus" do
+    before :each do
+      Faraday::Connection.any_instance.stub(:get).and_return(
+        double(Faraday::Response, :body => MENU_LIST)
+      )
+      @client = Hungry::Client.new('fakeapikey')
+    end
+
+    it "returns a MenuList" do
+      @client.menus.should be_an_instance_of Hungry::MenuList
+    end
+
+  end
 end
