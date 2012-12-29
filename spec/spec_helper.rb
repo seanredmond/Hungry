@@ -1,3 +1,4 @@
+
 require "hungry"
 
 MENU_31729 = menu_json = {"id"=>31729, "name"=>nil, "sponsor"=>"Le Versailles", 
@@ -55,3 +56,8 @@ ONE_PAGE_31279 = {"aspect"=>"portrait", "dishes"=>[{"created_at"=>"2012-07-03T20
   "thumbnail_src"=>"http://images.nypl.org/index.php?id=4029915&t=r", 
   "thumbnail_src_jp2"=>"http://j2k.repo.nypl.org/adore-djatoka/resolver?url_ver=Z39.88-2004&rft_id=urn:uuid:bf8b24be-cb02-4876-e040-e00a1806540b&svc_id=info:lanl-repo/svc/getRegion&svc_val_fmt=info:ofi/fmt:kev:mtx:jpeg2000&svc.format=image/jpeg&svc.scale=108,108&svc.region=627,240,3431,3431&svc.rotate=0", 
   "uuid"=>"bf8b24be-cb02-4876-e040-e00a1806540b"}
+
+DISH_329313 = %q<{"id":329313,"name":"AA Milk (bottle)","description":null,"menus_appeared":1,"times_appeared":1,"first_appeared":1940,"last_appeared":1940,"lowest_price":"$0.10","highest_price":"$0.10","links":[{"href":"http://menus.nypl.org/api/dishes","rel":"index"},{"href":"http://menus.nypl.org/api/dishes/329313/menus","rel":"menus"}]}>
+
+
+

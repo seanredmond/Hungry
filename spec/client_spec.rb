@@ -29,4 +29,17 @@ describe Hungry::Client do
     end
   end
 
+  describe "#dish" do
+    before :each do
+      Faraday::Connection.any_instance.stub(:get).and_return(
+        double(Faraday::Response, :body => DISH_329313)
+      )
+      @client = Hungry::Client.new('fakeapikey')
+    end
+
+    it "returns a Dish" do
+      @client.dish(1000).should be_an_instance_of Hungry::Dish
+    end
+  end
+
 end

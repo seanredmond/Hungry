@@ -21,6 +21,15 @@ module Hungry
       )
     end
 
+    # Order a dish
+    # @param [Fixnum, String] id ID of the dish
+    # @return [Dish] an instance of Dish
+    def dish(id)
+      Hungry::Dish.new(
+        get_endpoint("http://menus.nypl.org/api/dishes/#{id}"), self
+      )
+    end
+
     protected
     def get_endpoint(path)
       # full_path = "http://menus.nypl.org/api/" << path
