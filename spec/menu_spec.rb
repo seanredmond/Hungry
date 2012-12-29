@@ -1,12 +1,12 @@
 require "spec_helper"
 
 describe Hungry::Menu do
-  describe "Basic initialization" do
-    before :each do
-      @client_double = double(Hungry::Client)
-      @menu = Hungry::Menu.new(MENU_31729, @client_double)
-    end
+  before :each do
+    @client_double = double(Hungry::Client)
+    @menu = Hungry::Menu.new(MENU_31729, @client_double)
+  end
 
+  describe "Basic initialization" do
     it "has an id" do
       @menu.id.should eq 31729
     end
@@ -130,6 +130,11 @@ describe Hungry::Menu do
     it "returns its client" do
       @menu.client.should eq @client_double
     end
+  end
 
+  describe "#link" do
+    it "returns the link href" do
+      @menu.link(:index).should eq 'http://menus.nypl.org/api/menus'
+    end
   end
 end
