@@ -5,10 +5,6 @@ module Hungry
       @client = client
     end
 
-    def id
-      @data['id']
-    end
-
     def client
       @client
     end
