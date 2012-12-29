@@ -1,6 +1,7 @@
 require "faraday"
 require "json"
 require "hungry/version"
+require "hungry/resource"
 require "hungry/menu"
 require "hungry/client"
 
