@@ -132,6 +132,15 @@ describe Hungry::Menu do
     end
   end
 
+  describe "#date" do
+    it "returns a Date" do
+      @menu.date.should be_an_instance_of Date
+      @menu.date.year.should eq @menu.year
+      @menu.date.month.should eq @menu.month
+      @menu.date.day.should eq @menu.day
+    end
+  end
+
   describe "#link" do
     it "returns the link href" do
       @menu.link(:index).should eq 'http://menus.nypl.org/api/menus'

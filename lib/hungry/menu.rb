@@ -1,3 +1,4 @@
+require "Date"
 module Hungry
   # A single menu
 
@@ -11,6 +12,12 @@ module Hungry
     # @return [Fixnum] The id
     def id
       @data['id']
+    end
+
+    # Retrieve the menu's date
+    # @return [Date]
+    def date
+      Date.new(@data['year'], @data['month'], @data['day'])
     end
 
     # Retrieve the menu's pages
