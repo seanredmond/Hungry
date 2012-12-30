@@ -1,4 +1,4 @@
-require "Date"
+require "date"
 module Hungry
   # A single menu
 
